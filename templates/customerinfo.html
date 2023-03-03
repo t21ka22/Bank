@@ -1,0 +1,60 @@
+<head>
+  <title>Kobeck Savings and Loans: loanlist</title>
+  <style>
+    body {
+      background-color: seablue;
+      color: white;
+      font-family: Bookman old style, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    img{
+      float:left;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      padding: 1em 0;
+    }
+    h3 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 3em;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.4em;
+      margin: 1em 0;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      margin-right: 1em;
+    }
+  </style>
+</head>
+<body bgcolor="seablue,white,red">
+   <!-- Add logo image -->
+  <img src="static/bblogo.png" alt="Kobeck Savings and Loans logo" class="logo">
+  
+  </head>
+  <body bgcolor="seablue,white,red">
+ 
+    <h1>Kobeck Savings and Loans: customerinfo</h1>
+      <p style="clear:left">customer information: 
+        customer_ID | 
+        credit_score | 
+        annual_income | 
+        current_credit_balance	| 
+    
+    {% for row in rows %}
+        <p>customer information: 
+        <b>{{row["customer_ID"]}}</b> | 
+        {{row["credit_score"]}} | 
+        {{row["annual_income"]}} | 
+        {{row['current_credit_balance']}}	| 
+        
+        {% endfor %}
+</body>
+</html>
