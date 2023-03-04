@@ -1,0 +1,60 @@
+<head>
+  <title>Kobeck Savings and Loans: loanlist</title>
+  <style>
+    body {
+      background-color: seablue;
+      color: white;
+      font-family: Bookman old style, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    img{
+      float:left;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      padding: 1em 0;
+    }
+    h3 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 2em;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      margin: 1em 0;
+    }
+    a {
+      margin-right: 1em;
+    }
+  </style>
+</head>
+<body bgcolor="seablue,white,red">
+   <!-- Add logo image -->
+    <img src="static/bblogo.png" alt="Kobeck Savings and Loans logo" class="logo">
+  
+    </style>
+  </head>
+  <body bgcolor="seablue,white,red">
+   
+      <h1>Kobeck Savings and Loans: loanlist</h1>
+      <p>loan information: 
+        loan_ID | 
+        customer_ID | 
+        current_Loan_amount | 
+        term	| 
+      
+       {% for row in rows %}
+        <p>loan information: 
+        <b>{{row["loan_ID"]}}</b> | 
+        <a href="{{url_for('customerloan', customer_ID=row['customer_ID'])}}">{{row["customer_ID"]}}</a> | 
+        {{row["current_Loan_amount"]}} | 
+        {{row['term']}}	| 
+        
+        {% endfor %}
+
+  </body>
+  </html>
